@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var rangePickerView: RangePickerView!
-    var values = Array(1...100)
+    var values = Array(1 ... 100)
 
     override func viewDidLoad() {
         super.viewDidLoad()

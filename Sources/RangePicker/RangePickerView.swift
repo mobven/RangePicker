@@ -57,15 +57,15 @@ public final class RangePickerView: UIView {
     /// Rotating picker view to specified axis directions. Default values is .vertical.
     public var alignment: Alignment {
         get {
-            return mAlignment
+            mAlignment
         }
         set {
-            if mAlignment == .vertical && newValue == .horizontal {
+            if mAlignment == .vertical, newValue == .horizontal {
                 rotate(angle: -90)
                 valueView.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
                 setRange()
                 dataSource.alignment = alignment
-            } else if mAlignment == .horizontal && newValue == .vertical {
+            } else if mAlignment == .horizontal, newValue == .vertical {
                 rotate(angle: 90)
                 valueView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
                 setRange()
