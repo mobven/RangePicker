@@ -23,10 +23,6 @@ public final class RangePickerView: UIView {
     @IBOutlet var lblValueType: UILabel!
     @IBOutlet var valueView: UIView!
 
-    public enum Alignment {
-        case horizontal, vertical
-    }
-
     var dataSource: DataSource = .init()
 
     /// Range of the values for the visible items. Default values is 10.
@@ -56,21 +52,13 @@ public final class RangePickerView: UIView {
     private var mAlignment: Alignment = .vertical
     /// Rotating picker view to specified axis directions. Default values is .vertical.
     public var alignment: Alignment {
-        get {
-            mAlignment
-        }
+        get { mAlignment }
         set {
-            if mAlignment == .vertical, newValue == .horizontal {
-                rotate(angle: -90)
-                valueView.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
-                setRange()
-                dataSource.alignment = alignment
-            } else if mAlignment == .horizontal, newValue == .vertical {
-                rotate(angle: 90)
-                valueView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
-                setRange()
-                dataSource.alignment = alignment
-            }
+            guard newValue != mAlignment else { return }
+            rotate(angle: newValue.angle)
+            valueView.transform = CGAffineTransform(rotationAngle: newValue.rotationAngle)
+            setRange()
+            dataSource.alignment = newValue
             mAlignment = newValue
         }
     }
@@ -143,7 +131,6 @@ extension RangePickerView {
      */
     func rotate(angle: CGFloat) {
         let radians = angle / 180.0 * CGFloat.pi
-        let rotation = transform.rotated(by: radians)
-        transform = rotation
+        transform = transform.rotated(by: radians)
     }
 }
