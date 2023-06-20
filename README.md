@@ -1,4 +1,3 @@
-[![Pod License](https://github.com/mobven/RangePicker)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 
 UI Component to display items in UIPickerView based on range selection.
