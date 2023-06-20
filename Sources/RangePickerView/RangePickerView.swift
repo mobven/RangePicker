@@ -64,7 +64,7 @@ public final class RangePickerView: UIView {
         }
     }
 
-    /// Rotating picker view to horizontal directions if it's true. Default values is false.
+    /// Rotating picker view to horizontal directions if it's true. Default values is "cm".
     public var valueType: String = "cm" {
         didSet {
             if valueType != "cm" {
