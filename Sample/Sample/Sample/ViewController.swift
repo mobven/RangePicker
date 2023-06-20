@@ -5,11 +5,10 @@
 //  Created by Cem Eke on 20.06.2023.
 //
 
-import UIKit
 import RangePicker
+import UIKit
 
 class ViewController: UIViewController {
-
     @IBOutlet var rangePicker: RangePicker!
     var values: [Int] = [1, 2, 3, 4, 5]
 
@@ -34,4 +33,3 @@ class ViewController: UIViewController {
         values[row].value
     }
 }
-
