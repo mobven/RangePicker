@@ -5,6 +5,17 @@ UI Component to display items in UIPickerView based on range selection.
 
 Enhance the user experience by using a RangePicker.
 
+## Gifs
+
+<div align="center">
+  <span width="248" height="517">
+    <img alt="iphone14promax" width="248" height="517" src="Docs/Gifs/gif1.gif">
+    </span>
+    <span width="248" height="517">
+    <img alt="iphone13mini" width="248" height="517" src="Docs/Gifs/gif2.gif">
+    </span>
+</div>
+
 ## Examples
 <p align="center">
     <img alt="exampleScreen1" width="299" height="650" src="Docs/Screenshots/exampleScreen1.png">
