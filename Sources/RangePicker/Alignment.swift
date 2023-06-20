@@ -12,8 +12,8 @@ public extension RangePickerView {
         case horizontal, vertical
         var angle: CGFloat {
             switch self {
-            case .horizontal: return -90
-            case .vertical: return 90
+            case .horizontal: return -90 / 180.0 * CGFloat.pi
+            case .vertical: return 90 / 180.0 * CGFloat.pi
             }
         }
 

@@ -49,13 +49,13 @@ public final class RangePickerView: UIView {
         pickerView.subviews[1].backgroundColor = .clear
     }
 
-    private var mAlignment: Alignment = .vertical
+    var mAlignment: Alignment = .vertical
     /// Rotating picker view to specified axis directions. Default values is .vertical.
     public var alignment: Alignment {
         get { mAlignment }
         set {
             guard newValue != mAlignment else { return }
-            rotate(angle: newValue.angle)
+            transform = transform.rotated(by: newValue.angle)
             valueView.transform = CGAffineTransform(rotationAngle: newValue.rotationAngle)
             setRange()
             dataSource.alignment = newValue
@@ -121,16 +121,5 @@ extension RangePickerView: RangePickerViewInternalDelegate {
 
     func rangePickerView(numberOfIndexs index: Int) -> Int? {
         delegate?.rangePickerView(self, numberOfIndicesAt: index)
-    }
-}
-
-extension RangePickerView {
-    /**
-       Rotate a view by specified degrees
-       parameter angle: angle in degrees
-     */
-    func rotate(angle: CGFloat) {
-        let radians = angle / 180.0 * CGFloat.pi
-        transform = transform.rotated(by: radians)
     }
 }
