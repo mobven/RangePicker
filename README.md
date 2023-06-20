@@ -45,7 +45,7 @@ You can easly customize the tooltip with editing `Configuration` properties.
 | Property                 | Type           | Description                                                                        |
 | ------------------------ | -------------- | -----------------------------------------------------------------------------------|
 | `horizontalPicker`       | `Bool`         | The value for vertical or horizontal.                                                |
-| `range`.                 | `Int`.         | The minimum and maximum value for selection.                                                    |
+| `range`.                 | `Int`         | The minimum and maximum value for selection.                                                    |
 | `valueType`              | `String`       | The type of value to select. (Kg, cm etc.)   
 
 ##### Example 
