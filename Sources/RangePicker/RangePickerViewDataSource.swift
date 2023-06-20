@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol RangePickerViewInternalDelegate: AnyObject {
+protocol RangePickerViewInternalDelegate: AnyObject {
     func rangePickerView(didSelectRow row: Int)
     func rangePickerView(titleForRowAt row: Int) -> String?
     func rangePickerView(numberOfIndexs index: Int) -> Int?
@@ -19,7 +19,7 @@ extension RangePickerView {
     final class DataSource: NSObject {
         weak var delegate: RangePickerViewInternalDelegate?
         var visibilityRange: Int = 10
-        var horizontalPicker: Bool = false
+        var alignment: RangePickerView.Alignment = .vertical
         override init() {
             super.init()
         }
@@ -60,7 +60,9 @@ extension RangePickerView.DataSource: UIPickerViewDelegate {
 
             valueLabel.textColor = .darkGray
             valueLabel.font = .systemFont(ofSize: 14)
-            horizontalPicker ? valueLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2) : nil
+            if alignment == .horizontal {
+                valueLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+            }
             valueLabel.sizeToFit()
             view.tag = row
             view.addSubview(lineView)

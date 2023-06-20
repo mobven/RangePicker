@@ -13,6 +13,7 @@
 		18D4BB8C2A41ADEA00996FE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D4BB8A2A41ADEA00996FE8 /* Main.storyboard */; };
 		18D4BB8E2A41ADEB00996FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D4BB8D2A41ADEB00996FE8 /* Assets.xcassets */; };
 		18D4BB912A41ADEB00996FE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D4BB8F2A41ADEB00996FE8 /* LaunchScreen.storyboard */; };
+		19D687962A423EB700B61301 /* RangePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 19D687952A423EB700B61301 /* RangePicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		18D4BB8D2A41ADEB00996FE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D4BB902A41ADEB00996FE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D4BB922A41ADEB00996FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19D6878F2A41D04500B61301 /* RangePicker */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RangePicker; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D687962A423EB700B61301 /* RangePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +43,10 @@
 		18D4BB782A41ADEA00996FE8 = {
 			isa = PBXGroup;
 			children = (
+				19D6878E2A41D04500B61301 /* Packages */,
 				18D4BB832A41ADEA00996FE8 /* Sample */,
 				18D4BB822A41ADEA00996FE8 /* Products */,
+				19D687902A41D05E00B61301 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +72,21 @@
 			path = Sample;
 			sourceTree = "<group>";
 		};
+		19D6878E2A41D04500B61301 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				19D6878F2A41D04500B61301 /* RangePicker */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		19D687902A41D05E00B61301 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +103,9 @@
 			dependencies = (
 			);
 			name = Sample;
+			packageProductDependencies = (
+				19D687952A423EB700B61301 /* RangePicker */,
+			);
 			productName = Sample;
 			productReference = 18D4BB812A41ADEA00996FE8 /* Sample.app */;
 			productType = "com.apple.product-type.application";
@@ -358,6 +381,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		19D687952A423EB700B61301 /* RangePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RangePicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18D4BB792A41ADEA00996FE8 /* Project object */;
 }

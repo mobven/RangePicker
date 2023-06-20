@@ -9,18 +9,24 @@ import RangePicker
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var rangePicker: RangePicker!
-    var values: [Int] = [1, 2, 3, 4, 5]
+    @IBOutlet var rangePickerView: RangePickerView!
+    var values = Array(1...100)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        rangePicker.delegate = self
-        rangePicker.horizontalPicker = true
-        rangePicker.valueType = "kg"
+        rangePickerView.delegate = self
+        rangePickerView.alignment = .horizontal
+        rangePickerView.valueType = "kg"
     }
 
+    @IBAction func changePickerAlignment(_ sender: UISwitch) {
+        rangePickerView.alignment = sender.isOn ? .horizontal : .vertical
+    }
+}
+
+extension ViewController: RangePickerViewDelegate {
     func rangePickerView(_ rangePickerView: RangePickerView, titleForRowAtIndex row: Int) -> String? {
-        values[row].value
+        String(values[row])
     }
 
     func rangePickerView(_ rangePickerView: RangePickerView, didSelectRow row: Int) {}
@@ -30,6 +36,6 @@ class ViewController: UIViewController {
     }
 
     func rangePickerView(_ rangePickerView: RangePickerView, headerTitleIndicesAt row: Int) -> String? {
-        values[row].value
+        String(values[row])
     }
 }

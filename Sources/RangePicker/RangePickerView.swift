@@ -23,6 +23,10 @@ public final class RangePickerView: UIView {
     @IBOutlet var lblValueType: UILabel!
     @IBOutlet var valueView: UIView!
 
+    public enum Alignment {
+        case horizontal, vertical
+    }
+
     var dataSource: DataSource = .init()
 
     /// Range of the values for the visible items. Default values is 10.
@@ -49,18 +53,25 @@ public final class RangePickerView: UIView {
         pickerView.subviews[1].backgroundColor = .clear
     }
 
-    /// Rotating picker view to horizontal directions if it's true. Default values is false.
-    public var horizontalPicker: Bool = false {
-        didSet {
-            if horizontalPicker == true {
+    private var mAlignment: Alignment = .vertical
+    /// Rotating picker view to specified axis directions. Default values is .vertical.
+    public var alignment: Alignment {
+        get {
+            return mAlignment
+        }
+        set {
+            if mAlignment == .vertical && newValue == .horizontal {
                 rotate(angle: -90)
                 valueView.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
-                // lblValueType.text = "kg"
                 setRange()
-                dataSource.horizontalPicker = horizontalPicker
-            } else {
-                return
+                dataSource.alignment = alignment
+            } else if mAlignment == .horizontal && newValue == .vertical {
+                rotate(angle: 90)
+                valueView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
+                setRange()
+                dataSource.alignment = alignment
             }
+            mAlignment = newValue
         }
     }
 
@@ -111,16 +122,16 @@ public final class RangePickerView: UIView {
 }
 
 extension RangePickerView: RangePickerViewInternalDelegate {
-    public func rangePickerView(titleForRowAt row: Int) -> String? {
+    func rangePickerView(titleForRowAt row: Int) -> String? {
         delegate?.rangePickerView(self, titleForRowAtIndex: row)
     }
 
-    public func rangePickerView(didSelectRow row: Int) {
+    func rangePickerView(didSelectRow row: Int) {
         delegate?.rangePickerView(self, didSelectRow: row)
         lblValue.text = delegate?.rangePickerView(self, headerTitleIndicesAt: row)
     }
 
-    public func rangePickerView(numberOfIndexs index: Int) -> Int? {
+    func rangePickerView(numberOfIndexs index: Int) -> Int? {
         delegate?.rangePickerView(self, numberOfIndicesAt: index)
     }
 }
@@ -130,7 +141,6 @@ extension RangePickerView {
        Rotate a view by specified degrees
        parameter angle: angle in degrees
      */
-
     func rotate(angle: CGFloat) {
         let radians = angle / 180.0 * CGFloat.pi
         let rotation = transform.rotated(by: radians)

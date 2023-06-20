@@ -2,11 +2,9 @@
 
 UI Component to display items in UIPickerView based on range selection.
 # RangePicker
-
 Enhance the user experience by using a RangePicker.
 
 ## Gifs
-
 <div align="center">
   <span width="248" height="517">
     <img alt="iphone14promax" width="248" height="517" src="Docs/Gifs/gif1.gif">
@@ -16,28 +14,22 @@ Enhance the user experience by using a RangePicker.
     </span>
 </div>
 
-## Examples
-<p align="center">
-    <img alt="exampleScreen1" width="299" height="650" src="Docs/Screenshots/exampleScreen1.png">
-    <img alt="exampleScreen2" width="299" height="650" src="Docs/Screenshots/exampleScreen2.png">
-</p>
-
 ## Requirements
 * iOS 11.0+
-* Xcode 13+
-* Swift 5.6+
+* Xcode 14+
+* Swift 5.8+
 
 ## Installation
-RangePickerView is distributed with [Swift Package Manager](https://swift.org/package-manager/) which is the only official distribution tool by Apple. You can add RangePickerView to your project from Xcode's `File > Swift Packages > Add Package Dependency` menu with its github URL:
+RangePickerView is distributed via [Swift Package Manager](https://swift.org/package-manager/) which is the only official distribution tool by Apple. You can add RangePickerView to your project from Xcode's `File > Swift Packages > Add Package Dependency` menu with its github URL:
 ```
 https://github.com/mobven/RangePicker.git
 ```
 
 ## Usage
 ### UIStoryboard
-```
-import RangePickerView
-@IBOutlet var rangePicker: RangePickerView!
+```swift
+import RangePicker
+@IBOutlet var rangePickerView: RangePickerView!
 ```
 
 ### Programmatically
@@ -49,21 +41,20 @@ self.view.addSubviews(rangePickerView)
 ```
 
 #### Customization
-You can easly customize the tooltip with editing `Configuration` properties.
+You can easily customize the `RangePicker` with editing `Configuration` properties.
 
-
-| Property                 | Type           | Description                                                                        |
-| ------------------------ | -------------- | -----------------------------------------------------------------------------------|
-| `horizontalPicker`       | `Bool`         | The value for vertical or horizontal.                                                |
-| `range`                 | `Int`         | The minimum and maximum value for selection.                                                    |
-| `valueType`              | `String`       | The type of value to select. (Kg, cm etc.)   
+| Property      | Type                        | Description                                     |
+| ------------- | --------------------------- | ------------------------------------------------|
+| `alignment`   | `RangePickerView.Alignment` | The value for vertical or horizontal.           |
+| `range`       | `Int`                       | The minimum and maximum value for selection.    |
+| `valueType`   | `String`                    | The type of value to select. (Kg, cm etc.)      |
 
 ##### Example 
 You can customize properties like this,
 
 ```swift
-  rangePicker.horizontalPicker = true
-  rangePicker.valueType = "kg"
+  rangePickerView.alignment = .horizontal
+  rangePickerView.valueType = "kg"
 ``` 
                                    
 ## What's next

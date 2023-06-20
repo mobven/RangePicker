@@ -3,23 +3,23 @@
 import PackageDescription
 
 let package = Package(
-    name: "RangePickerView",
+    name: "RangePicker",
     platforms: [.iOS(.v11)],
     products: [
         .library(
-            name: "RangePickerView",
-            targets: ["RangePickerView"]
+            name: "RangePicker",
+            targets: ["RangePicker"]
         )
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "RangePickerView",
+            name: "RangePicker",
             dependencies: []
         ),
         .testTarget(
-            name: "RangePickerViewTests",
-            dependencies: ["RangePickerView"]
+            name: "RangePickerTests",
+            dependencies: ["RangePicker"]
         )
     ]
 )

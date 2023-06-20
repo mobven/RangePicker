@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,27 +17,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zu0-NI-pu7" customClass="RangePicker" customModule="RangePicker">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zu0-NI-pu7" customClass="RangePickerView" customModule="RangePicker">
                                 <rect key="frame" x="50" y="147" width="290" height="563"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mpt-J8-zkX">
+                                <rect key="frame" x="82.333333333333329" y="77" width="225.33333333333337" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vertical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyu-pv-49S">
+                                        <rect key="frame" x="0.0" y="14.999999999999998" width="57.333333333333336" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="scL-zL-kQQ">
+                                        <rect key="frame" x="77.333333333333329" y="9.6666666666666714" width="51.999999999999986" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="xQJ-eC-JZ8"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="changePickerAlignment:" destination="BYZ-38-t0r" eventType="valueChanged" id="Kv1-Tt-Dsm"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horizontal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7s-FU-wKj">
+                                        <rect key="frame" x="147.33333333333331" y="14.999999999999998" width="78" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="thH-nI-TEq"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="mpt-J8-zkX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Oq-Gn-lcw"/>
                             <constraint firstItem="Zu0-NI-pu7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="P7T-dp-OTn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zu0-NI-pu7" secondAttribute="bottom" constant="100" id="Re9-DE-OfE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zu0-NI-pu7" secondAttribute="trailing" constant="50" id="mUL-Lc-xtC"/>
                             <constraint firstItem="Zu0-NI-pu7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="tgs-36-IA6"/>
+                            <constraint firstItem="Zu0-NI-pu7" firstAttribute="top" secondItem="mpt-J8-zkX" secondAttribute="bottom" constant="20" id="uED-EX-nhc"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="rangePicker" destination="Zu0-NI-pu7" id="1pA-ho-mDE"/>
+                        <outlet property="rangePickerView" destination="Zu0-NI-pu7" id="AVS-pI-ICD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="-28"/>
+            <point key="canvasLocation" x="-95.384615384615387" y="-28.436018957345969"/>
         </scene>
     </scenes>
     <resources>
