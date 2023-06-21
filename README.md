@@ -48,6 +48,10 @@ You can easily customize the `RangePicker` with editing `Configuration` properti
 | `alignment`   | `RangePickerView.Alignment` | The value for vertical or horizontal.           |
 | `range`       | `Int`                       | The minimum and maximum value for selection.    |
 | `valueType`   | `String`                    | The type of value to select. (Kg, cm etc.)      |
+| `visibilityRange`   | `Int`                    | The range of elements to display.      |
+| `selectedIndex`   | `Int`                    | A zero-indexed number identifying selection of the range picker view.      |
+| `selectRow`   | `Int`                    | Select row of the picker view.     |
+
 
 ##### Example 
 You can customize properties like this,
