@@ -6,11 +6,11 @@ Enhance the user experience by using a RangePicker.
 
 ## Gifs
 <div align="center">
-  <span width="248" height="517">
-    <img alt="iphone14promax" width="248" height="517" src="Docs/Gifs/gif1.gif">
+  <span width="238" height="517">
+    <img alt="iphone14pro" width="238" height="517" src="Docs/Gifs/gif1.gif">
     </span>
-    <span width="248" height="517">
-    <img alt="iphone13mini" width="248" height="517" src="Docs/Gifs/gif2.gif">
+    <span width="238" height="517">
+    <img alt="iphone14pro" width="238" height="517" src="Docs/Gifs/gif2.gif">
     </span>
 </div>
 
