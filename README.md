@@ -68,6 +68,7 @@ You can customize properties like this,
 ## What's next
 - [] SwiftUI representable code example.
 - [] Unit Tests.
+- [] Update value and unit label during active scrolling gesture.
 
 ---
-Developed with 🖤 at [Mobven](https://mobven.com/)
+Developed with 🖤 at [Mobven](https://mobven.com/) for [MAC+](https://apps.apple.com/tr/app/mac-online-fitness-deneyimi/id1573778936/)
