@@ -7,10 +7,10 @@ Enhance the user experience by using a RangePicker.
 ## Gifs
 <div align="center">
   <span width="248" height="517">
-    <img alt="iphone14promax" width="248" height="517" src="Docs/Gifs/gif1.gif">
+    <img alt="iphone14pro" width="248" height="517" src="Docs/Gifs/gif1.gif">
     </span>
     <span width="248" height="517">
-    <img alt="iphone13mini" width="248" height="517" src="Docs/Gifs/gif2.gif">
+    <img alt="iphone14pro" width="248" height="517" src="Docs/Gifs/gif2.gif">
     </span>
 </div>
 
@@ -43,15 +43,19 @@ self.view.addSubviews(rangePickerView)
 #### Customization
 You can easily customize the `RangePicker` with editing `Configuration` properties.
 
-| Property      | Type                        | Description                                     |
-| ------------- | --------------------------- | ------------------------------------------------|
-| `alignment`   | `RangePickerView.Alignment` | The value for vertical or horizontal.           |
-| `range`       | `Int`                       | The minimum and maximum value for selection.    |
-| `valueType`   | `String`                    | The type of value to select. (Kg, cm etc.)      |
-| `visibilityRange`   | `Int`                    | The range of elements to display.      |
-| `selectedIndex`   | `Int`                    | A zero-indexed number identifying selection of the range picker view.      |
-| `selectRow`   | `Int`                    | Select row of the picker view.     |
-
+| Property                   | Type                        | Description                                                           |
+| -------------------------- | --------------------------- | ----------------------------------------------------------------------|
+| `alignment`                | `RangePickerView.Alignment` | The value for vertical or horizontal.                                 |
+| `range`                    | `Int`                       | The minimum and maximum value for selection.                          |
+| `valueType`                | `String`                    | The type of value to select. (Kg, cm etc.)                            |
+| `visibilityRange`          | `Int`                       | The range of elements to display.                                     |
+| `selectedIndex`            | `Int`                       | A zero-indexed number identifying selection of the range picker view. |
+| `selectRow`                | `Int`                       | Select row of the picker view.                                        |
+| `seperatorBackgroundColor` | `UIColor`                   | The background color of the separator view.                           |
+| `valueFont`                | `UIFont`                    | The font for the value label's text.                                  |
+| `valueTextColor`           | `UIColor`                   | The text color for the value label's text.                            |
+| `unitFont`                 | `UIFont`                    | The font for the unit label's text.                                   |
+| `unitTextColor`            | `UIColor`                   | The text color for the unit label's text.                             |
 
 ##### Example 
 You can customize properties like this,
@@ -64,6 +68,7 @@ You can customize properties like this,
 ## What's next
 - [] SwiftUI representable code example.
 - [] Unit Tests.
+- [] Update value and unit label during active scrolling gesture.
 
 ---
-Developed with 🖤 at [Mobven](https://mobven.com/)
+Developed with 🖤 at [Mobven](https://mobven.com/) for [MAC+](https://apps.apple.com/tr/app/mac-online-fitness-deneyimi/id1573778936/)

@@ -19,9 +19,10 @@ public protocol RangePickerViewDelegate: AnyObject {
 /// UI Component to display items in UIPickerView based on range selection.
 public final class RangePickerView: UIView {
     @IBOutlet var pickerView: UIPickerView!
-    @IBOutlet var lblValue: UILabel!
-    @IBOutlet var lblValueType: UILabel!
+    @IBOutlet var valueLabel: UILabel!
+    @IBOutlet var unitLabel: UILabel!
     @IBOutlet var valueView: UIView!
+    @IBOutlet var seperatorView: UIView!
 
     var dataSource: DataSource = .init()
 
@@ -30,6 +31,41 @@ public final class RangePickerView: UIView {
         didSet {
             dataSource.visibilityRange = visibilityRange
             pickerView.reloadAllComponents()
+        }
+    }
+    
+    /// The background color of the separator view.
+    public var seperatorBackgroundColor: UIColor = .systemGreen {
+        didSet {
+            seperatorView.backgroundColor = seperatorBackgroundColor
+        }
+    }
+    
+    /// The font for the value label's text.
+    public var valueFont: UIFont = .systemFont(ofSize: 38, weight: .semibold) {
+        didSet {
+            valueLabel.font = valueFont
+        }
+    }
+    
+    /// The text color for the value label's text.
+    public var valueTextColor: UIColor = .black {
+        didSet {
+            valueLabel.textColor = valueTextColor
+        }
+    }
+
+    /// The font for the unit label's text.
+    public var unitFont: UIFont = .systemFont(ofSize: 18, weight: .regular) {
+        didSet {
+            unitLabel.font = unitFont
+        }
+    }
+    
+    /// The text color for the unit label's text.
+    public var unitTextColor: UIColor = .gray {
+        didSet {
+            unitLabel.textColor = unitTextColor
         }
     }
 
@@ -44,7 +80,7 @@ public final class RangePickerView: UIView {
         let selectedValue = delegate?.rangePickerView(self, titleForRowAtIndex: row) ?? ""
         if !selectedValue.isEmpty {
             pickerView.view(forRow: row, forComponent: .zero)?.isHidden = true
-            lblValue.text = delegate?.rangePickerView(self, headerTitleIndicesAt: row)
+            valueLabel.text = delegate?.rangePickerView(self, headerTitleIndicesAt: row)
         }
         pickerView.subviews[1].backgroundColor = .clear
     }
@@ -67,7 +103,7 @@ public final class RangePickerView: UIView {
     public var valueType: String = "cm" {
         didSet {
             if valueType != "cm" {
-                lblValueType.text = valueType
+                unitLabel.text = valueType
             } else {
                 return
             }
@@ -116,7 +152,7 @@ extension RangePickerView: RangePickerViewInternalDelegate {
 
     func rangePickerView(didSelectRow row: Int) {
         delegate?.rangePickerView(self, didSelectRow: row)
-        lblValue.text = delegate?.rangePickerView(self, headerTitleIndicesAt: row)
+        valueLabel.text = delegate?.rangePickerView(self, headerTitleIndicesAt: row)
     }
 
     func rangePickerView(numberOfIndexs index: Int) -> Int? {
