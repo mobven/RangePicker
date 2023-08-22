@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,6 +23,7 @@
                 <outlet property="lblValue" destination="V9J-xo-fJ8" id="DA9-Tg-qDL"/>
                 <outlet property="lblValueType" destination="MW0-Z8-2h8" id="Iui-JM-rak"/>
                 <outlet property="pickerView" destination="VlG-3u-25I" id="oUk-IC-Arb"/>
+                <outlet property="seperatorView" destination="4hT-ac-XW7" id="k4f-4e-Ll4"/>
                 <outlet property="valueView" destination="sCc-Ns-1DA" id="pci-4R-fRl"/>
             </connections>
         </placeholder>
@@ -52,7 +53,7 @@
                             <rect key="frame" x="133" y="219.5" width="185" height="85.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9J-xo-fJ8">
-                                    <rect key="frame" x="0.0" y="16" width="120" height="53.5"/>
+                                    <rect key="frame" x="0.0" y="20.5" width="120" height="44.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="120" id="Nvj-Dg-iur"/>
                                     </constraints>
@@ -61,7 +62,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MW0-Z8-2h8">
-                                    <rect key="frame" x="123" y="37" width="29.5" height="25.5"/>
+                                    <rect key="frame" x="123" y="37" width="25.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
                                     <color key="textColor" name="07GrayX11"/>
                                     <nil key="highlightedColor"/>

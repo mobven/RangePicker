@@ -22,6 +22,7 @@ public final class RangePickerView: UIView {
     @IBOutlet var lblValue: UILabel!
     @IBOutlet var lblValueType: UILabel!
     @IBOutlet var valueView: UIView!
+    @IBOutlet var seperatorView: UIView!
 
     var dataSource: DataSource = .init()
 
@@ -30,6 +31,41 @@ public final class RangePickerView: UIView {
         didSet {
             dataSource.visibilityRange = visibilityRange
             pickerView.reloadAllComponents()
+        }
+    }
+    
+    /// The background color of the separator view.
+    public var seperatorBackgroundColor: UIColor = .systemGreen {
+        didSet {
+            seperatorView.backgroundColor = seperatorBackgroundColor
+        }
+    }
+    
+    /// The font for the lblValue's text.
+    public var lblValueTextFont: UIFont = .systemFont(ofSize: 38, weight: .semibold) {
+        didSet {
+            lblValue.font = lblValueTextFont
+        }
+    }
+    
+    /// The text color for the lblValue's text.
+    public var lblValueTextColor: UIColor = .black {
+        didSet {
+            lblValue.textColor = lblValueTextColor
+        }
+    }
+
+    /// The font for the lblValueType's text.
+    public var lblValueTypeTextFont: UIFont = .systemFont(ofSize: 18, weight: .regular) {
+        didSet {
+            lblValueType.font = lblValueTypeTextFont
+        }
+    }
+    
+    /// The text color for the lblValueType's text.
+    public var lblValueTypeTextColor: UIColor = .gray {
+        didSet {
+            lblValueType.textColor = lblValueTypeTextColor
         }
     }
 
