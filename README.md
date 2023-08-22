@@ -52,10 +52,10 @@ You can easily customize the `RangePicker` with editing `Configuration` properti
 | `selectedIndex`            | `Int`                       | A zero-indexed number identifying selection of the range picker view. |
 | `selectRow`                | `Int`                       | Select row of the picker view.                                        |
 | `seperatorBackgroundColor` | `UIColor`                   | The background color of the separator view.                           |
-| `lblValueTextFont`         | `UIFont`                    | The font for the lblValue's text.                                     |
-| `lblValueTextColor`        | `UIColor`                   | The text color for the lblValue's text.                               |
-| `lblValueTypeTextFont`     | `UIFont`                    | The font for the lblValueType's text.                                 |
-| `lblValueTypeTextColor`    | `UIColor`                   | The text color for the lblValueType's text.                           |
+| `valueFont`                | `UIFont`                    | The font for the value label's text.                                  |
+| `valueTextColor`           | `UIColor`                   | The text color for the value label's text.                            |
+| `unitFont`                 | `UIFont`                    | The font for the unit label's text.                                   |
+| `unitTextColor`            | `UIColor`                   | The text color for the unit label's text.                             |
 
 ##### Example 
 You can customize properties like this,

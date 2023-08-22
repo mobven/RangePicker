@@ -20,10 +20,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RangePickerView" customModule="RangePickerView">
             <connections>
-                <outlet property="lblValue" destination="V9J-xo-fJ8" id="DA9-Tg-qDL"/>
-                <outlet property="lblValueType" destination="MW0-Z8-2h8" id="Iui-JM-rak"/>
                 <outlet property="pickerView" destination="VlG-3u-25I" id="oUk-IC-Arb"/>
                 <outlet property="seperatorView" destination="4hT-ac-XW7" id="k4f-4e-Ll4"/>
+                <outlet property="unitLabel" destination="MW0-Z8-2h8" id="5Qe-Zm-YDu"/>
+                <outlet property="valueLabel" destination="V9J-xo-fJ8" id="z6W-he-AWQ"/>
                 <outlet property="valueView" destination="sCc-Ns-1DA" id="pci-4R-fRl"/>
             </connections>
         </placeholder>
